@@ -13,9 +13,6 @@ def selection_sort(list):
         list[i], list[minPosition] = list[minPosition], list[i]
     return comparisons
 
-
-# print(selection_sort([23, 10]))
-
 def insertion_sort(list):
     comparisons = 0
     for i in range(1, len(list)):
@@ -28,7 +25,7 @@ def insertion_sort(list):
                 break
     return comparisons
 
-# print(insertion_sort([9, 3, 5, 6, 1, 4]))
+# print(insertion_sort([8, 7, 6, 5, 4, 3, 2, 1]))
 
 def main():
     # Code coverage NOT required for main
