@@ -16,19 +16,27 @@ def selection_sort(list):
 # print(selection_sort([23, 10]))
 
 def insertion_sort(list):
-    comparisons = 0                      #not sure if this is correct
+    comparisons = 0
     for i in range(1, len(list)):
-        current = list[i]
-        while i > 0 and list[i-1] > current:
-            comparisons+=1
-            list[i] = list[i-1]
-            i = i-1
-            list[i] = current
+        for k in range(i):
+            comparisons += 1
+            if list[i-k] < list[i-k-1]:
+                list[i-k], list[i-k-1] = list[i-k-1], list[i-k]
+            else:
+                break
     return comparisons
 
-# print(insertion_sort([9, 3, 5, 6, 1, 4]))
+    # comparisons = 0                      #not sure if this is correct
+    # for i in range(1, len(list)):
+    #     current = list[i]
+    #     while i > 0 and list[i-1] > current:
+    #         comparisons+=1
+    #         list[i] = list[i-1]
+    #         i = i-1
+    #         list[i] = current
+    # return comparisons
 
-   
+# print(insertion_sort([9, 3, 5, 6, 1, 4]))
 
 def main():
     # Code coverage NOT required for main
