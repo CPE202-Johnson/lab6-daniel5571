@@ -6,6 +6,7 @@ def selection_sort(list):
     for i in range(len(list)):
         minPosition = i
         for j in range(i+1, len(list)):
+            # print(list)
             comparisons +=1
             if list[minPosition] > list[j]:
                 minPosition = j
@@ -18,32 +19,14 @@ def selection_sort(list):
 def insertion_sort(list):
     comparisons = 0
     for i in range(1, len(list)):
-        currentValue = list[i]
-        currentPosition = i
-        while currentPosition > 0 and list[currentPosition - 1] > currentValue:
-            comparisons+=1
-            list[currentPosition] = list[currentPosition - 1]
-            currentPosition = currentPosition - 1
-        list[currentPosition] = currentValue
+        for k in range(i):
+            # print(list)
+            comparisons += 1
+            if list[i-k] < list[i-k-1]:
+                list[i-k], list[i-k-1] = list[i-k-1], list[i-k]
+            else:
+                break
     return comparisons
-
-    #     for k in range(i):
-    #         comparisons += 1
-    #         if list[i-k] < list[i-k-1]:
-    #             list[i-k], list[i-k-1] = list[i-k-1], list[i-k]
-    #         else:
-    #             break
-    # return comparisons
-
-    # comparisons = 0                      #not sure if this is correct
-    # for i in range(1, len(list)):
-    #     current = list[i]
-    #     while i > 0 and list[i-1] > current:
-    #         comparisons+=1
-    #         list[i] = list[i-1]
-    #         i = i-1
-    #         list[i] = current
-    # return comparisons
 
 # print(insertion_sort([9, 3, 5, 6, 1, 4]))
 
