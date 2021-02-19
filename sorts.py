@@ -18,13 +18,22 @@ def selection_sort(list):
 def insertion_sort(list):
     comparisons = 0
     for i in range(1, len(list)):
-        for k in range(i):
-            comparisons += 1
-            if list[i-k] < list[i-k-1]:
-                list[i-k], list[i-k-1] = list[i-k-1], list[i-k]
-            else:
-                break
+        currentValue = list[i]
+        currentPosition = i
+        while currentPosition > 0 and list[currentPosition - 1] > currentValue:
+            comparisons+=1
+            list[currentPosition] = list[currentPosition - 1]
+            currentPosition = currentPosition - 1
+        list[currentPosition] = currentValue
     return comparisons
+
+    #     for k in range(i):
+    #         comparisons += 1
+    #         if list[i-k] < list[i-k-1]:
+    #             list[i-k], list[i-k-1] = list[i-k-1], list[i-k]
+    #         else:
+    #             break
+    # return comparisons
 
     # comparisons = 0                      #not sure if this is correct
     # for i in range(1, len(list)):
